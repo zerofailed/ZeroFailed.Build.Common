@@ -15,6 +15,8 @@ For more information about the different component types, please refer to the [Z
 This extension consists of the following feature groups:
 
 - General Build
+- CI/CD Server integration
+- Versioning
 
 ## Processes
 
