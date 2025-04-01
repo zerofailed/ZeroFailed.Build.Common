@@ -1,6 +1,6 @@
 # ZeroFailed.Build.Common
 
-A [ZeroFailed](https://github.com/endjin/ZeroFailed) extension containing general purpose features that support build processes across a variety of technology stacks and toolchains.
+A [ZeroFailed](https://github.com/zerofailed/ZeroFailed) extension containing general purpose features that support build processes across a variety of technology stacks and toolchains.
 
 ## Features Overview
 
