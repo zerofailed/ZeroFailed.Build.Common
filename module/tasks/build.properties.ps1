@@ -12,5 +12,5 @@ $PackagesDir ??= property ZF_BUILD_PACKAGES_DIR '_packages'
 $CoverageDir ??= property ZF_BUILD_COVERAGE_DIR '_codeCoverage'
 $CoverageDir = [IO.Path]::IsPathRooted($CoverageDir) ? $CoverageDir : (Join-Path $here $CoverageDir)
 
-# Synopsis: When true (and running on a DevOps agent), the build process will send phase completion messages to the agent.
+# Synopsis: When true (and running on a CI/CD server), the build process will send phase completion messages to the agent.
 $SendPhaseCompletionMessagesToCICDServer = property ZF_BUILD_PHASE_COMPLETION_MESSAGES $true
