@@ -1,6 +1,5 @@
 # ZeroFailed.Build.Common - Reference Sheet
 
-
 <!-- START_GENERATED_HELP -->
 
 ## Build
@@ -45,6 +44,7 @@ This group group include features for build process related CI/CD server integra
 ## Versioning
 
 This group provides automated versioning functionality.  Currently it supports this using the [GitVersion](https://github.com/GitTools/GitVersion) tool.
+
 ### Properties
 
 | Name                    | Default Value      | ENV Override                       | Description                                                                                                                                                                                            |
