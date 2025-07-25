@@ -3,7 +3,7 @@
 # </copyright>
 
 # Synopsis: When true, the version number will not be sent to the DevOps agent.
-$SkipSetCICDServerBuildNumber = property ZF_BUILD_SKIP_SET_CICD_SERVER_BUILDNUMBER $false
+$SkipSetCICDServerBuildNumber = [Convert]::ToBoolean((property ZF_BUILD_SKIP_SET_CICD_SERVER_BUILDNUMBER $false))
 
 # Synopsis: Defines which of the GitVersion properties is used as the build server's build number.
 $GitVersionComponentForBuildNumber = property ZF_BUILD_GITVERSION_COMPONENT_FOR_BUILDNUMBER "SemVer"

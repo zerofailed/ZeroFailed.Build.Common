@@ -3,10 +3,10 @@
 # </copyright>
 
 # Synopsis: When true, the versioning tasks will be skipped.
-$SkipVersion = property ZF_BUILD_SKIP_VERSIONING $false
+$SkipVersion = [Convert]::ToBoolean((property ZF_BUILD_SKIP_VERSIONING $false))
 
 # Synopsis: When true, the GitVersion tool will be used to determine the version number.
-$UseGitVersion = property ZF_BUILD_USE_GITVERSION $true
+$UseGitVersion = [Convert]::ToBoolean((property ZF_BUILD_USE_GITVERSION $true))
 
 # Synopsis: Path to the GitVersion configuration file. Default is a "GitVersion.yml" file alongside the running script.
 $GitVersionConfigPath = property ZF_BUILD_GITVERSION_CONFIG_PATH ((Test-Path variable:/here) ? (Join-Path $here "GitVersion.yml") : "./GitVersion.yml")
