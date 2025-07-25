@@ -1,5 +1,10 @@
 # ZeroFailed.Build.Common
 
+[![Build Status](https://github.com/zerofailed/ZeroFailed.Build.Common/actions/workflows/build.yml/badge.svg)](https://github.com/zerofailed/ZeroFailed.Build.Common/actions/workflows/build.yml)  
+[![GitHub Release](https://img.shields.io/github/release/zerofailed/ZeroFailed.Build.Common.svg)](https://github.com/zerofailed/ZeroFailed.Build.Common/releases)  
+[![PowerShell Gallery Version](https://img.shields.io/powershellgallery/v/Endjin.ZeroFailed.Build?color=blue)](https://www.powershellgallery.com/packages/ZeroFailed.Build.Common)  
+[![License](https://img.shields.io/github/license/zerofailed/ZeroFailed.Build.Common.svg)](https://github.com/zerofailed/ZeroFailed.Build.Common/blob/main/LICENSE)
+
 A [ZeroFailed](https://github.com/zerofailed/ZeroFailed) extension containing general purpose features that support build processes across a variety of technology stacks and toolchains.
 
 ## Features Overview
