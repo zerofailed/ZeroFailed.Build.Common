@@ -18,6 +18,27 @@ This extension consists of the following feature groups, refer to the [HELP page
 - CI/CD Server integration
 - Versioning
 
+The diagram below shows the features provided by this extension and when they run as part of the build process [detailed below](#processes).
+
+```mermaid
+kanban
+    init
+        ensurePkgDir[Ensure package output dir exists]
+    version
+        genVersion[Generate GitVersion version]
+        sendVersion[Send version to CI/CD server]
+    build
+        compileOK['CompileOK' message to CI/CD server]
+    test
+        testOK['TestOK' message to CI/CD server]
+    analysis
+        analysisOK['AnalysisOK' message to CI/CD server]
+    package
+        packageOK['PackageOK' message to CI/CD server]
+    publish
+        publishOK['PublishOK' message to CI/CD server]
+```
+
 ## Processes
 
 ### build.process.ps1
@@ -29,7 +50,7 @@ To use this process ensure that your reference to this extension includes the `P
 ```
 $zeroFailedExtensions = @(
     @{
-        Name = "ZeroFailed.DevOps.Common"
+        Name = "ZeroFailed.Build.Common"
         Process = "tasks/build.process.ps1"
     }
 )
@@ -69,25 +90,4 @@ task PrePackage MyCustomPackagingTask
 task MyCustomPackagingTask {
     # Do something special
 }
-```
-
-The diagram below shows the features provided by this extension and when they run as part of the above build process.
-
-```mermaid
-kanban
-    init
-        ensurePkgDir[Ensure package output dir exists]
-    version
-        genVersion[Generate GitVersion version]
-        sendVersion[Send version to CI/CD server]
-    build
-        compileOK['CompileOK' message to CI/CD server]
-    test
-        testOK['TestOK' message to CI/CD server]
-    analysis
-        analysisOK['AnalysisOK' message to CI/CD server]
-    package
-        packageOK['PackageOK' message to CI/CD server]
-    publish
-        publishOK['PublishOK' message to CI/CD server]
 ```
