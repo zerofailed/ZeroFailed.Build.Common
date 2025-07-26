@@ -11,6 +11,10 @@ task GitVersion -If {$UseGitVersion} -After VersionCore {
         Write-Build Cyan "Version details overridden by environment variable:`n$($GitVersion | ConvertTo-Json)"
     }
     else {
+        if (!(Test-Path -PathType Container .git)) {
+            Write-Warning "No git repository found, versioning will be skipped"
+        }
+
         Install-DotNetTool -Name "GitVersion.Tool" -Version $GitVersionToolVersion
         Write-Build Cyan "GitVersion Config: $GitVersionConfigPath"
 
