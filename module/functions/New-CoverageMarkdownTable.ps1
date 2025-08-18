@@ -44,6 +44,8 @@ function New-CoverageMarkdownTable
     [CmdletBinding()]
     param (
         [Parameter(Mandatory=$true)]
+        [AllowEmptyCollection()]
+        [AllowNull()]
         [array] $Data,
         
         [Parameter(Mandatory=$true)]
@@ -303,6 +305,8 @@ function New-CoverageSummaryTable
     [CmdletBinding()]
     param (
         [Parameter(Mandatory=$true)]
+        [AllowEmptyCollection()]
+        [AllowNull()]
         [array] $Data,
         
         [Parameter(Mandatory=$true)]

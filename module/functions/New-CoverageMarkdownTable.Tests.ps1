@@ -67,8 +67,8 @@ Describe 'New-CoverageMarkdownTable' {
             $result = New-CoverageMarkdownTable -Data $script:testClasses -Type Class -Style Simple
             
             $result | Should -Contain "| Class | Line Coverage | Branch Coverage | Methods | Complexity |"
-            $result | Should -Contain "| `TestClass1.java` | 95.0% | 88.0% | 2 | 2.5 |"
-            $result | Should -Contain "| `TestClass2.java` | 72.0% | 65.0% | 1 | 5.8 |"
+            $result | Should -Contain '| `TestClass1.java` | 95.0% | 88.0% | 2 | 2.5 |'
+            $result | Should -Contain '| `TestClass2.java` | 72.0% | 65.0% | 1 | 5.8 |'
         }
     }
 
@@ -77,8 +77,8 @@ Describe 'New-CoverageMarkdownTable' {
             $result = New-CoverageMarkdownTable -Data $script:testMethods -Type Method -Style Simple
             
             $result | Should -Contain "| Method | Line Coverage | Branch Coverage | Lines | Complexity |"
-            $result | Should -Contain "| `testMethod1` | 100.0% | 100.0% | 2 | 1.2 |"
-            $result | Should -Contain "| `testMethod2` | 60.0% | 45.0% | 1 | 8.5 |"
+            $result | Should -Contain '| `testMethod1` | 100.0% | 100.0% | 2 | 1.2 |'
+            $result | Should -Contain '| `testMethod2` | 60.0% | 45.0% | 1 | 8.5 |'
         }
     }
 
@@ -95,9 +95,9 @@ Describe 'New-CoverageMarkdownTable' {
         It 'should include icons when using Icon style' {
             $result = New-CoverageMarkdownTable -Data $script:testPackages -Type Package -Style Icon -MinimumCoverage 70
             
-            $result | Should -Match "✅.*92\.0%"  # Web package - excellent
-            $result | Should -Match "✔️.*85\.0%"  # Core package - good
-            $result | Should -Match "⚠️.*65\.0%"  # Util package - warning
+            ($result -join " ") | Should -Match "✅.*92\.0%"  # Web package - excellent
+            ($result -join " ") | Should -Match "✔️.*85\.0%"  # Core package - good
+            ($result -join " ") | Should -Match "⚠️.*65\.0%"  # Util package - warning
         }
     }
 
@@ -138,7 +138,7 @@ Describe 'New-CoverageMarkdownTable' {
             $testData = @(@{ Name = ''; LineRate = 0.85; BranchRate = 0.78; Complexity = 4.2; Classes = @() })
             $result = New-CoverageMarkdownTable -Data $testData -Type Package -Style Simple
             
-            $result | Should -Contain "| *root* |"
+            $result | Should -Contain "| *root* | 85.0% | 78.0% | 0 | 4.2 |"
         }
 
         It 'should handle missing properties gracefully' {

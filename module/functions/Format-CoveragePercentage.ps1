@@ -59,7 +59,7 @@ function Format-CoveragePercentage
     )
 
     # Ensure percentage is within valid range
-    $Percentage = [Math]::Max(0, [Math]::Min(100, $Percentage))
+    $Percentage = [Math]::Max(0.0, [Math]::Min(100.0, $Percentage))
     
     # Format the percentage value
     $formattedPercentage = $Percentage.ToString("F$DecimalPlaces")
