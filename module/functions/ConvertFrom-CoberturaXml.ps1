@@ -28,8 +28,6 @@
     Optional path where the Markdown report should be saved. If not specified, the report is returned as a string.
 .PARAMETER IncludeMethodDetails
     Include detailed method-level coverage information in the report.
-.PARAMETER IncludeLineDetails
-    Include individual line coverage details (may significantly increase report size).
 .PARAMETER SummaryOnly
     Generate only a summary report without detailed breakdowns.
 .PARAMETER MinimumCoverage
@@ -52,8 +50,6 @@ function ConvertFrom-CoberturaXml
         [Parameter()]
         [switch] $IncludeMethodDetails,
         
-        [Parameter()]
-        [switch] $IncludeLineDetails,
         
         [Parameter()]
         [switch] $SummaryOnly,
@@ -74,13 +70,13 @@ function ConvertFrom-CoberturaXml
         
         # Generate the Markdown report
         Write-Verbose "Generating Markdown report..."
-        $markdown = _generateMarkdownReport -CoverageData $coverageData -Title $Title -IncludeMethodDetails:$IncludeMethodDetails -IncludeLineDetails:$IncludeLineDetails -SummaryOnly:$SummaryOnly -MinimumCoverage $MinimumCoverage
+        $markdown = _generateMarkdownReport -CoverageData $coverageData -Title $Title -IncludeMethodDetails:$IncludeMethodDetails -SummaryOnly:$SummaryOnly -MinimumCoverage $MinimumCoverage
         
         # Output to file if specified, otherwise return string
         if ($OutputPath) {
             Write-Verbose "Writing report to: $OutputPath"
             $markdown | Out-File -FilePath $OutputPath -Encoding utf8
-            Write-Host "Coverage report written to: $OutputPath" -ForegroundColor Green
+            Write-Information "Coverage report written to: $OutputPath" -InformationAction Continue
         } else {
             return $markdown
         }
@@ -97,7 +93,6 @@ function _generateMarkdownReport {
         [hashtable] $CoverageData,
         [string] $Title,
         [bool] $IncludeMethodDetails,
-        [bool] $IncludeLineDetails,
         [bool] $SummaryOnly,
         [double] $MinimumCoverage
     )
