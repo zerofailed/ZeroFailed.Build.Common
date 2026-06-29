@@ -6,9 +6,13 @@
 
 # Synopsis: Run GitVersion tool
 task GitVersion -If {$UseGitVersion} -After VersionCore {
-    
-    if ($GitVersion.Keys.Count -gt 0) {
-        Write-Build Cyan "Version details overridden by environment variable:`n$($GitVersion | ConvertTo-Json)"
+
+    if ($GitVersion -is [string] -and -not [string]::IsNullOrWhiteSpace($GitVersion)) {
+        $script:GitVersion = $GitVersion | ConvertFrom-Json -AsHashtable
+    }
+
+    if ($script:GitVersion.Keys.Count -gt 0) {
+        Write-Build Cyan "Version details overridden by environment variable:`n$($script:GitVersion | ConvertTo-Json)"
     }
     else {
         if (!(Test-Path -PathType Container .git)) {
