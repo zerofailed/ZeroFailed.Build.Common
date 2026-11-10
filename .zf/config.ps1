@@ -1,5 +1,11 @@
 # Extensions setup
 $zerofailedExtensions = @(
+    # Ensure this repo's build uses itself as the extension source
+    @{
+        Name = "ZeroFailed.Build.Common"
+        Path = "./module"
+        Process = "tasks/build.process.ps1"
+    }
     @{
         Name = "ZeroFailed.Build.PowerShell"
         GitRepository = "https://github.com/zerofailed/ZeroFailed.Build.PowerShell.git"
