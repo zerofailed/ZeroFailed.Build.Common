@@ -1,4 +1,4 @@
-#Requires -Version 7.1
+#Requires -Version 7.4
 <#
 .SYNOPSIS
     Runs the build process for this repository.
@@ -56,7 +56,7 @@ param (
     [string] $ZfModulePath,
 
     [Parameter()]
-    [string] $ZfModuleVersion = "2.0.1",
+    [string] $ZfModuleVersion = "2.0.3",
 
     [Parameter()]
     [string] $ZfModuleRepository = "https://nuget.pkg.github.com/zerofailed/index.json",

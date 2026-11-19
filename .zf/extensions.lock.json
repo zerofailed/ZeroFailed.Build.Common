@@ -33,8 +33,8 @@
         "repository": "https://github.com/zerofailed/ZeroFailed.Build.PowerShell.git"
       },
       "requested": "main",
-      "resolved": "e81bc6dd6caf7e1e7ef7a19bdab836faaf90c6f3",
-      "contentHash": "sha256:20718d4131ce155fc829af325aa01542eff88ca124bc970e29cebc19ab466a63",
+      "resolved": "4c6fec9410199a097107e605757b08e51ee24296",
+      "contentHash": "sha256:8a14305a5c934c2443b9567a0119942e40d080fc8850d9e9e7b67e3a7a15f6b1",
       "direct": true,
       "requiredBy": []
     },
@@ -46,9 +46,9 @@
         "repository": "https://github.com/zerofailed/ZeroFailed.DevOps.Common"
       },
       "requested": "[2.0.0,3.0.0)",
-      "resolved": "dce6c70b86fe09c36e875818a76f162c18499b90",
-      "resolvedRef": "refs/tags/2.4.2",
-      "contentHash": "sha256:0e44cd83878eb9bd02da5031fbae99c148e9bc605c7aabd76842453f97b743e7",
+      "resolved": "c4e5d102de59249f87d97420813b235c47568b85",
+      "resolvedRef": "refs/tags/2.4.3",
+      "contentHash": "sha256:2434243da7607d2cba16d47ae505325f8881647dce2a8eb9728ff085d9e5b6b4",
       "direct": false,
       "requiredBy": [
         "ZeroFailed.Build.Common"
